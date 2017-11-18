@@ -1,9 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = new mongoose.Schema({
-    id: String,
-    user: user,
+    id_rate: String,
     comment: String,
-    rating: Float32Array,
+    rating: Number,
     timeRate: String,
 
 

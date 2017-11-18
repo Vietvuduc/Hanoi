@@ -1,3 +1,4 @@
+
 module.exports = function(app, place ){
     app.get('/place/get_place', (req, res) => {
         place.find({}, (err, rs) =>{
@@ -12,11 +13,10 @@ module.exports = function(app, place ){
             else {
               let result = {
                 code :9992,
-                message :"Place is not existed",
               }
               return res.json(result);
             }
           
-      });
-    })
+      })
+    });
 }

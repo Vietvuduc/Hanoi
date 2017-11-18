@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
+
 var Schema = new mongoose.Schema({
-    token: String,
+    token_user: String,
     urlAvatar: String,
     id_user: String,
     lastName: String,

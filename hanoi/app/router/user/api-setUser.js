@@ -1,7 +1,8 @@
+var user = require('../model/user');
 
-module.exports = function(app,profile ){
-    app.post('/user/setUser', (req, res) => {
-      user.find({ token: req.body.token }, (err,rs) => {
+module.exports = function(app){
+    app.post('/user/set_user', function (req, res) {
+      user.find({ token_user: req.body.token_user }, (err,rs) => {
         if (rs.length != 0) {
             rs[0].firstname = req.body.firstname,
             rs[0].lastname = req.body.lastname,
@@ -13,8 +14,6 @@ module.exports = function(app,profile ){
                   message: "OK",
                   data: rs[0].urlAvatar,
                 }
-                  
-            
                 return res.json(result);
               } else {
                 result = {
@@ -29,7 +28,7 @@ module.exports = function(app,profile ){
         }
         else {
           let result = {
-            message: "",
+            message: "xyz",
           }
           return res.json(result);
         }

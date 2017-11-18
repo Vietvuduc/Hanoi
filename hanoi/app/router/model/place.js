@@ -4,6 +4,7 @@ var rate = require('./rate');
 
 var Schema = new mongoose.Schema({
     id_place: String,
+    token_place: String,
     name: String,
     address: String,
     type: String,

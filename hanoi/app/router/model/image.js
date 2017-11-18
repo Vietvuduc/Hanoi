@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = new mongoose.Schema({
-    id: String,
+    id_image: String,
     url: String,
 
 
