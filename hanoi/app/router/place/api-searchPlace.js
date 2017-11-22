@@ -16,7 +16,7 @@ module.exports = function (app, place) {
             ]
         };
 
-        console.log(req.body.category_id);
+        
         var resultchange =0;
         if(req.body.name !=null){
             resultchange +=1;

@@ -1,18 +1,18 @@
-var user = require('../model/user');
 
-module.exports = function(app){
-    app.post('/user/set_user', function (req, res) {
-      user.find({ token_user: req.body.token_user }, (err,rs) => {
-        if (rs.length != 0) {
-            rs[0].firstname = req.body.firstname,
-            rs[0].lastname = req.body.lastname,
-            rs[0].urlAvatar = req.body.urlAvatar,
-            rs.save(function (err, post) {
+module.exports = function(app, user){
+    app.post('/user/set_user', (req, res) => {
+      user.find({ id_user : req.body.id_user }, (err, rs) => {
+        console.log(rs);
+        if (rs.length != 0 ) {
+          rs[0].firstName = req.body.firstName,
+          rs[0].lastName = req.body.lastName,
+          rs[0].urlAvatar = req.body.urlAvatar,
+          
+            rs[0].save(function (err, post) {
               if (!err) {
                 result = {
                   code: 1000,
                   message: "OK",
-                  data: rs[0].urlAvatar,
                 }
                 return res.json(result);
               } else {
@@ -23,16 +23,17 @@ module.exports = function(app){
                 }
                 return res.json(result);
               }
-            })
+            });
   
         }
         else {
           let result = {
-            message: "xyz",
+            code: 9992,
+            message: "lỗi",
           }
           return res.json(result);
         }
   
       })
       });
-}
+  }

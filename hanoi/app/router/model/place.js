@@ -4,7 +4,6 @@ var rate = require('./rate');
 
 var Schema = new mongoose.Schema({
     id_place: String,
-    token_place: String,
     name: String,
     address: String,
     type: String,
@@ -13,6 +12,7 @@ var Schema = new mongoose.Schema({
     rates: [],
     numberPhone: String,
     website: String,
+    email: String,
     openHours: String,
     price: String,
     distance: String,
