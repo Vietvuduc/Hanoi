@@ -3,7 +3,7 @@
 module.exports = function (app) {
     app.post('/user/create_user', function (req, res) {
         let newUser = new User();
-        newUser.urlAvatar =  req.body;
+        newUser.urlAvatar =  req.body.urlAvatar;
         newUser.id_user =  req.body.id_user;
         newUser.lastName =  req.body.lastName;
         newUser.firstName =  req.body.firstName;
@@ -13,6 +13,7 @@ module.exports = function (app) {
           if(!er){
             let result={
                 code:1000,
+                data: newUser,
             }
             return res.json(result);
             }

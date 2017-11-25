@@ -1,11 +1,12 @@
-
+var moment = require('moment');
 var place  = require('../model/place');
 
 module.exports = function(app){
     app.post('/place/create_place',function(req, res){
-        console.log(req.body.id_place);
+        // console.log(req.body.id_place);
         let newplace = new place();
-        newplace.id_place= req.body.id_place;
+        let m = moment();
+        // newplace.id_place= req.body.id_place;
         newplace.name=req.body.name;
         newplace.address=req.body.address;
         newplace.type=req.body.type;
@@ -18,6 +19,8 @@ module.exports = function(app){
         newplace.openHours= req.body.openHours;
         newplace.price= req.body.price;
         newplace.distance=req.body.distance;
+        newplace.id_place = req.body.type + "." + m.toString();
+        console.log(req.body.name);
         
        newplace.save((e,r)=>{
            if(!e){

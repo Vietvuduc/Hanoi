@@ -9,6 +9,7 @@ module.exports = function(app, place, user) {
                 let 
                 rates = {
                     id_user : req.body.id_user,
+                    data : rs,
                     comment : req.body.comment,
                     rating : req.body.rating,
                     timeRate: m.toString(),

@@ -9,6 +9,7 @@ module.exports = function(app, user, place) {
                 let likes = {
                     timeLike : m.toString(),
                     id_place : req.body.id_place,
+                    data : rs,
                 }
                 user.find({id_user : req.body.id_user}, (err1,rs1) => {
                     console.log(rs1);
