@@ -3,8 +3,7 @@ var mongoose = require('mongoose');
 var Schema = new mongoose.Schema({
     id_user: String,
     urlAvatar: String,
-    lastName: String,
-    firstName: String,
+    fullName: String,
     likes: [],
 
 });    

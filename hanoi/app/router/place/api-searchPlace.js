@@ -10,9 +10,9 @@ module.exports = function (app, place) {
                 { address: req.body.address, type: req.body.type}
             ],
             change1 : [
-                {name: req.body.name},
-                {address: req.body.address},
-                {type: req.body.type}
+                {name: req.body.name },
+                {address:  req.body.address },
+                {type: req.body.type }
             ]
         };
 

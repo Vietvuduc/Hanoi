@@ -5,8 +5,7 @@ module.exports = function (app) {
         let newUser = new User();
         newUser.urlAvatar =  req.body.urlAvatar;
         newUser.id_user =  req.body.id_user;
-        newUser.lastName =  req.body.lastName;
-        newUser.firstName =  req.body.firstName;
+        newUser.fullName =  req.body.fullName;
         newUser.like = [];
 
         newUser.save((er, rl) => {

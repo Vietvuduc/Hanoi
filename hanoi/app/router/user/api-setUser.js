@@ -4,8 +4,7 @@ module.exports = function(app, user){
       user.find({ id_user : req.body.id_user }, (err, rs) => {
         console.log(rs);
         if (rs.length != 0 ) {
-          rs[0].firstName = req.body.firstName,
-          rs[0].lastName = req.body.lastName,
+          rs[0].fullName = req.body.fullName,
           rs[0].urlAvatar = req.body.urlAvatar,
           
             rs[0].save(function (err, post) {
