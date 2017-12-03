@@ -1,6 +1,7 @@
 module.exports = function(app, place){
     app.post('/place/get_placebytype', (req, res) => {
-      place.find({ type : {$regex: req.body.type} }, (err, rs) => {
+      // find({post_text:{$regex:"tutorialspoint"}})
+      place.find({ type : {$regex:req.body.type, $options: 'i'} }, (err, rs) => {
         console.log(rs);
         if (rs.length != 0 ) {
           result = {

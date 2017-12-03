@@ -14,7 +14,7 @@ module.exports = function(app, user, place) {
                 user.find({id_user : req.body.id_user}, (err1,rs1) => {
                     console.log(rs1);
                     if(rs1.length !=0) {
-                        rs1[0].likes.push(likes);
+                        rs1[0].likes.push(likes);                   //Remove rs1[0] khỏi mang likes, 
                         rs1[0].save( function(err2, user) {
                             if(err2 != null){
                                 res.send(err2);

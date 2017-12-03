@@ -1,18 +1,21 @@
+
 module.exports = function (app, place) {
     app.post('/place/search_place', (req, res) => {
         var input = {
-            change3 : [
-                { name: req.body.name, address: req.body.address, type: req.body.type }
-            ],
+            change3 : [{
+                 name: {$regex:req.body.name, $options: 'i' }, 
+                  address: {$regex:req.body.address, $options: 'i' },
+                  type: {$regex:req.body.type, $options: 'i' },
+            }],
             change2 : [
                 { name: req.body.name, address: req.body.address },
                 { name: req.body.name, type: req.body.type },
                 { address: req.body.address, type: req.body.type}
             ],
             change1 : [
-                {name: req.body.name },
-                {address:  req.body.address },
-                {type: req.body.type }
+                {name: {$regex:req.body.name, $options: 'i' } },
+                {address: req.body.address},
+                {type: req.body.type}
             ]
         };
 
