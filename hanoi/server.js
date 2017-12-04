@@ -37,3 +37,4 @@ require('../hanoi/app/router/place/api-place')(app,dbMongo);
 require('../hanoi/app/router/user/api-user')(app,dbMongo);
 require('../hanoi/app/router/rate/api-rate')(app,dbMongo);
 require('../hanoi/app/router/like/api-like')(app,dbMongo);
+require('../hanoi/app/router/login/api-login')(app,dbMongo);

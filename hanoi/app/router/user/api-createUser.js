@@ -6,6 +6,9 @@ module.exports = function (app) {
         newUser.urlAvatar =  req.body.urlAvatar;
         newUser.id_user =  req.body.id_user;
         newUser.fullName =  req.body.fullName;
+        newUser.sdt = req.body.sdt;
+        newUser.pass = req.body.pass;
+
         newUser.like = [];
 
         newUser.save((er, rl) => {
